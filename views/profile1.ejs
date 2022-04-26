@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title> 
+    <link rel="stylesheet" href="profile.css"> 
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Profile</a></li>
+
+            <div>
+                <input type="text" name="search" placeholder="Search this website" id="search">
+            </div>
+        </ul>
+    </nav> 
+
+    <h1 align='center'>User Details</h1>
+    <% if(action == 'add') { %>
+
+      <% } else { %>
+        <table class="table table-striped table-bordered table-hover" width="875" align="center" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border:solid #000;">
+            <tr>
+              <th width="100%" valign="top" align="center" colspan="4" style="font-size:22px; font-weight:bold">PORTFOLIO BUILDER</th>
+            </tr>
+            <!-- <tr>
+              <td width="100%" valign="top" align="center" style="padding-bottom:5px; border-bottom:1px dashed #333; text-align:center;" colspan="4"><img width="110" height="117" alt="PORTFOLIO BUILDER" src=""></td>
+            </tr> -->
+            <!-- Logo if any -->
+            <tr>
+              <th width="100%" valign="top" align="center" colspan="4" style="font-size:16px; font-weight:bold">USER DATA SHEET</th>
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>User Id:</strong></th>
+              
+            </tr>
+            <tr class="highlighted">
+              <th width="20%" valign="top" height="30" align="left"><strong>User First Name: </strong></th>
+              
+            
+            </tr>
+
+            <tr class="highlighted">
+              <th width="20%" valign="top" height="30" align="left"><strong>User Last Name: </strong></th>
+              
+              
+            </tr>
+                              
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Place of Birth: </strong></th>
+              
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Date of Birth: </strong></th>
+              
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Profession: </strong></th>
+              
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Mobile No: </strong></th>
+              
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Email: </strong></th>
+              <td class="info" valign="top" align="left"></td>
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Address: </strong></th>
+              
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Institute: </strong></th>
+              
+            </tr>
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Qualification: </strong></th>
+              
+            </tr>
+            
+            <tr>
+              <th width="20%" height="30" valign="top" align="left"><strong>Course: </strong></th>
+              
+            </tr>
+
+            <tr>
+              <th valign="top" height="30" align="left"><strong>Grade: </strong></th>
+              
+            </tr>
+
+            <%
+                if(userData.length > 0)
+                {
+                    userData.forEach(function(data){
+            %>
+              <tr>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.user_id %></td>
+                <td class="info" width="80%" valign="top" align="left"><strong><%=data.first_name %></strong></td>
+                <td class="info" width="80%" valign="top" align="left"><strong><%=data.last_name %></strong></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.birth_place %></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.dob %></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.profession %></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.mobile_no %></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.email %></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.address %></td>
+                <td class="info" valign="top" align="left" colspan="3"><%=data.institute %></td>
+                <td class="info" class="entries" valign="top" align="left" colspan="3"><%=data.qualification %></td>
+                <td class="info" width="30%" valign="top" align="left"><%=data.course %></td>
+                <td class="info" valign="top" align="left"><%=data.grade %></td> 
+              </tr>   
+              <%
+                });
+            }
+            else
+            {
+            %>
+            <tr>
+                <td class="info" valign="top" align="left" colspan="5">No Data Found</td>
+            </tr>
+            <%
+            }
+            %>
+        </table>
+      <% } %>          
+</body>
+</html>
